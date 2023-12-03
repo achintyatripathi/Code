@@ -1,4 +1,4 @@
-# version 1.0
+# version 1.1
 # this is a version of dutch flag problem 
 # it will have a list on 0,1,2 no. throughout the list , we need to sort them and 
 # arrange the same in a manner where all 0 ,1, 2 are linked one after other.
@@ -23,9 +23,11 @@ def dutch(a : list) -> list :
             left +=1
             mid+=1
         elif a[mid] == 1:
-            left+=1 
-        else:
+            mid+=1 
+        elif a[mid] == 2 :
             a[right],a[mid] = a[mid], a[right]
             right -=1
-            mid+=1
+    return a 
 
+a = list(map(int,input("Enter the list of only 0 ,1 ,2 followed by spaces !! \n").split()))
+print(dutch(a))
